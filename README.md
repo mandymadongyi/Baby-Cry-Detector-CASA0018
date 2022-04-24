@@ -67,17 +67,23 @@ Figure 2. Splitting one piece of 16 seconds audio into 5 pieces of 1-second audi
 
  
 
-​    ![Chart  Description automatically generated](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image003.png)![Chart  Description automatically generated](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image004.png)![Chart  Description automatically generated](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image005.png)
+<img width="139" alt="image" src="https://user-images.githubusercontent.com/91919718/164993937-21dd6722-2562-4c04-a54c-552298cd1ae5.png">
+<img width="139" alt="image" src="https://user-images.githubusercontent.com/91919718/164993961-fd918285-027f-4468-a738-12f3f618474d.png">
+<img width="139" alt="image" src="https://user-images.githubusercontent.com/91919718/164993967-f6dfa785-13b5-46e2-bac5-491e6434b3d6.png">
+
 
 Figure 3 - 5. Three examples of final crying data
 
-​    ![Graphical user interface  Description automatically generated](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image006.png)![Chart  Description automatically generated](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image007.png)![Chart  Description automatically generated](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image008.png)
+<img width="139" alt="image" src="https://user-images.githubusercontent.com/91919718/164993976-d700c1d6-d65f-4848-a966-32a536b93176.png">
+<img width="139" alt="image" src="https://user-images.githubusercontent.com/91919718/164993980-67cce16a-3b02-4cd3-a6b2-1499aa7ed96c.png">
+<img width="139" alt="image" src="https://user-images.githubusercontent.com/91919718/164993984-b3a1ea48-b496-40a0-959b-f0a2217429d1.png">
+
 
 Figure 6 - 8. Examples of final noise data (people talking, typing, music)  
 
-![Table  Description automatically generated](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image009.png)![Table  Description automatically generated](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image010.png)
+<img width="190" alt="image" src="https://user-images.githubusercontent.com/91919718/164993990-498dcdf4-9451-4cec-8706-c216cf563390.png">
+<img width="191" alt="image" src="https://user-images.githubusercontent.com/91919718/164993995-4358c73a-f665-424e-b9c5-ad5156063b9c.png">
 
-​        
 
 Figure 9 & Figure 10. Datasets before and after length standardisation
 
@@ -89,7 +95,7 @@ Based on the spectrogram of the sample data, I assume crying data might have a h
 
 After collecting, data is then sent to processing blocks and learning blocks for feature generation and machine learning. Then the model can be trained with different parameter settings before testing and deployment. 
 
-![Diagram  Description automatically generated](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image011.png)
+<img width="370" alt="image" src="https://user-images.githubusercontent.com/91919718/164994011-21c5648e-9385-43d8-b4ce-2b5441f17ab2.png">
 
 Figure 11. Workflow of creating, training, testing and deploying the model
 
@@ -98,12 +104,11 @@ For audio processing deep learning projects, Edge Impulse recommends 3 types of 
 Keeping the other variables (dropout rate, data augmentation on/off, number of epochs, validation set size, number of layers and its neurons for a certain learning mode) unchanged, 6 experiments are conducted using all possible combinations of DSP blocks and learning modes. It is worth noting that transfer learning only works with MFE. Based on the accuracy performance and training loss, the combination of a DSP of Spectrogram and Classification learning mode gives the highest model accuracy of 90.83% and lowest training loss of 0.21 and is then chosen to be the final model architecture for this project.
 
  
-
-![img](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image012.png)
+<img width="451" alt="image" src="https://user-images.githubusercontent.com/91919718/164994020-15b78f61-e3a8-4086-9962-4f7720bac65a.png">
 
 Figure 12. 6 experiments conducted with different processing and learning blocks to define the final model architecture
 
-![Graphical user interface, application, Teams  Description automatically generated](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image013.png)
+<img width="333" alt="image" src="https://user-images.githubusercontent.com/91919718/164994031-e1e39724-4b8c-4c16-a1d0-a807d888b5d4.png">
 
 Figure 13. Final model architecture in Edge Impulse
 
@@ -111,13 +116,13 @@ Figure 13. Final model architecture in Edge Impulse
 
 30 experiments are conducted before finding the best-trained model. 
 
-![Table  Description automatically generated](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image014.png)
+<img width="409" alt="image" src="https://user-images.githubusercontent.com/91919718/164994045-4e91a86e-05b5-42a1-a4b7-3fb5b0892499.png">
 
 Figure 14. Experiments records
 
 During experimentation, seven parameters are investigated to improve model performance, including input layer features, learning rate, neural network architecture, dropout rate, number of epochs and data augmentation. Experiment 1-6 defines model architecture, experiment 7-13 found the optimal learning rate, experiment 13-19 helped to define neural network architecture. Experiment 20-24 looked at the optimal dropout rate, experiment 25 investigated data augmentation should be toggled on or off, and experiment 26-30 searched for the best number of epochs. 
 
-![Graphical user interface, text, application, email  Description automatically generated](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image015.png)
+<img width="371" alt="image" src="https://user-images.githubusercontent.com/91919718/164994052-72c4fac4-526f-4efa-ac6a-f5987e3f5468.png">
 
 Table 2. Parameters changes made during experiments
 
@@ -151,7 +156,10 @@ Accuracy on testing set: 93.01%
 
  
 
-![Chart  Description automatically generated](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image016.png)![Chart, scatter chart  Description automatically generated](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image017.png)![Chart  Description automatically generated](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image018.png)
+<img width="145" alt="image" src="https://user-images.githubusercontent.com/91919718/164994069-f6f1a2e1-eabc-4f25-8c37-d0a464f37415.png">
+<img width="144" alt="image" src="https://user-images.githubusercontent.com/91919718/164994073-58fdbdfe-1d57-4264-963d-d4b6906b1738.png">
+<img width="145" alt="image" src="https://user-images.githubusercontent.com/91919718/164994075-91a6f414-57a9-41a5-921a-d4addd001d41.png">
+
 
 Figure 15. Default model performance on testing data
 
@@ -163,7 +171,7 @@ Figure 17. Trained model performance on validation data
 
 #### Observations:
 
-**![A screenshot of a computer  Description automatically generated with medium confidence](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image019.png)**
+<img width="464" alt="image" src="https://user-images.githubusercontent.com/91919718/164994082-8bd32245-01df-47e1-8152-94c3a62ff1eb.png">
 
 Figure 18. Parameter changes and their corresponding impact on accuracy, listed by experiment order on the left, by percentage changes from high to low on the right
 
