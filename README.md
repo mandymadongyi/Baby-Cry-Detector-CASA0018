@@ -28,7 +28,7 @@ This project contains three parts: 1) Build an audio dataset by manually recordi
 
 For the application process, audios are captured by Arduino built-in microphone each second and converted into spectrograms, then TF Lite will run the model to classify sensed sound into 2 types, crying and noise. If the crying possibility is over 0.7, the red light turns on. If the noise possibility is over 0.7, the green light turns on. If none of these happens, blue light is turned on. Red means crying, green means not crying, and blue means not sure. In short, when the baby’s cry is detected, a red light will be turned on to alert the parents. (Warden & Situnayake, 2020)
 
-![Diagram  Description automatically generated](file:////Users/dongyima/Library/Group%20Containers/UBF8T346G9.Office/TemporaryItems/msohtmlclip/clip_image001.png?raw=true)
+![1.png](/Users/dongyima/Desktop/1/2021 CE/TERM2/CASA0018 Deep Learning for Sensor Networks/DL4SN Assessment/report figure/1 ?raw=true)
 
 Figure 1. Application diagram of the building blocks of the baby cry detector
 
